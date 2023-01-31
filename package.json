@@ -1,0 +1,22 @@
+{
+  "name": "pricecalc",
+  "version": "1.0.0",
+  "description": "This app provides a calculator for pricing the cost of a website.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m0untainxd/PriceCalc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m0untainxd/PriceCalc/issues"
+  },
+  "homepage": "https://github.com/m0untainxd/PriceCalc#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
