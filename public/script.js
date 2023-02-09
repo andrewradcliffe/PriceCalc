@@ -32,8 +32,6 @@ function storeQuote() {
   let s = document.getElementById("salary").value;
   let d = document.getElementById("days").value;
 
-  console.log(n + "\n" + s + "\n" + d)
-
   // create obj for post request
   let postObj = {
     name: n,
@@ -48,7 +46,16 @@ function storeQuote() {
   xhttp.onreadystatechange = function() {
     if (this.status == 200) {
       res = this.responseText
-      console.log(res)
+      
+      // parse json and get value
+      parsed = JSON.parse(res)
+      finalPrice = parsed["finalPrice"]
+      message = parsed["console"]
+      console.log(message)
+
+      // update page
+      finalPriceRounded = Math.round(finalPrice / 50) * 50
+      document.getElementById("finalPrice").innerHTML = finalPriceRounded;
     }
   }
   xhttp.send(JSON.stringify(postObj))
