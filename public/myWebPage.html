@@ -12,12 +12,14 @@
 </div>
 
 <div>
-  <form id="budget" action="javascript:calculatePrice()">
+  <form id="budget" action="javascript:storeQuote()">
+    <label for="name">What would you like to name this quote?</label>
+    <input type="text" name="name" id="name"><br><br>
     <label for="salary">What annual salary seems suitable for you?</label>
     <input type="text" id="salary" name="salary"/><br><br>
     <label for="days">How many days do you think it will take you to make the website?</label>
     <input type="text" id="days" name="days"/><br><br>
-    <input type="submit" value="Calculate your price!"><br><br>
+    <input type="submit" value="Calculate and store your quote!"><br><br>
     <label id="finalPrice"> ??? </label>
   </form>
 </div>

@@ -1,9 +1,9 @@
-var xhttp = new XMLHttpRequest();
+let xhttp = new XMLHttpRequest();
 
 function calculatePrice() {
   // get the values from form
-  var s = document.getElementById("salary").value;
-  var d = document.getElementById("days").value;
+  let s = document.getElementById("salary").value;
+  let d = document.getElementById("days").value;
 
   // ajax request
   url = "/calcprice?salary=" + s + "&days=" + d
@@ -24,4 +24,32 @@ function calculatePrice() {
     }
   }
   xhttp.send()
+}
+
+function storeQuote() {
+  // get vals from form
+  let n = document.getElementById("name").value;
+  let s = document.getElementById("salary").value;
+  let d = document.getElementById("days").value;
+
+  console.log(n + "\n" + s + "\n" + d)
+
+  // create obj for post request
+  let postObj = {
+    name: n,
+    salary: s,
+    days: d
+  }
+
+  // create url and execute ajax request
+  url = "/storequote"
+  xhttp.open("POST", url, true);
+  xhttp.setRequestHeader("Content-Type", "application/json");
+  xhttp.onreadystatechange = function() {
+    if (this.status == 200) {
+      res = this.responseText
+      console.log(res)
+    }
+  }
+  xhttp.send(JSON.stringify(postObj))
 }
